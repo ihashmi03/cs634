@@ -31,7 +31,24 @@ What is the marginal probability $P(x)$ ?
 
 Are $x$ and $y$ independent ?
 
-**Multi-variate Gaussian distribution**
+#### Probability Rules
+
+If H is the hypothesis governing the probabilities distributions,
+
+**Product or chain rule**:
+
+This is obtained from the definition of conditional probability:
+
+$P(x,y|H) = P(x | y,H)P(y | H) = P(y | x,H)P(x |H)$
+
+**Sum rule**:
+
+This is obtaining by rewriting of the marginal probability denition:
+$P(x |H)   = \sum_y P(x,y |H) = \sum_y P(x | y,H)P(y |H)$
+
+### Key probability distributions
+
+#### Multi-variate Gaussian distribution
 
 $$f_{\mathbf X}(x_1,\ldots,x_k) = \frac{\exp\left(-\frac 1 2 ({\mathbf x}-{\boldsymbol\mu})^\mathrm{T}{\boldsymbol\Sigma}^{-1}({\mathbf x}-{\boldsymbol\mu})\right)}{\sqrt{(2\pi)^n|\boldsymbol\Sigma|}}$$
 where where <${\mathbf x}$ is a real 'n'-dimensional column vector and $|\boldsymbol\Sigma|\equiv \operatorname{det}\boldsymbol\Sigma$ is the determinant of $\boldsymbol\Sigma$. 
@@ -41,6 +58,7 @@ Apart from the definition, you need to connect the geometric interpretation of t
 ![bivariate-Gaussian](images/Figure2.7.png)
 
 Such geometric interpretations will be very useful when we study dimensionality reduction via Principal Component Analysis (PCA).
+
 
 ### Probabilistic Modeling 
 
@@ -67,14 +85,50 @@ Such geometric interpretations will be very useful when we study dimensionality 
 
 This example is instructive beyond the habit of having coin flip examples in every textbook in probability theory and statistics. It is useful to understand the conjugate prior distribution being discussed in Bishop's section 2.1.1 and Figure 3 that the code above replicates.  Armed with this understanding, we can now treat the Bayesian update for linear regression as described in the [linear regression section](/docs/lectures/regression/linear-regression).
 
-### Logits and other probability functions
+### Information Theoretic Definitions
 
-#### Logit and logistic function
+#### Entropy
+An outcome $x_t$ carries information that is a function of the probability of this outcome $P(x_t)$ by, 
+
+$I(x_t) = - \ln P(x_t)$
+
+This can be intuitively understood when you compare two outcomes. For example, consider someone is producing the result of the vehicular traffic outside of Holland tunnel on Monday morning. The information that the results is "low" carries much more information when the result is "high" since most people expect that there will be horrendous traffic outside of Holland tunnel on Monday mornings. When we want to represent the amount of uncertainty over a distribution (i.e. the traffic in Holland tunnel over all times) we can take the expectation over all possible outcomes i.e.
+
+$H(P) =  - \mathbb{E} \ln P(x)$
+
+and we call this quantity the **entropy** of the probability distribution $P(x)$. When $x$ is continuous the entropy is known as **differential entropy**. Continuing the alphabetical example, we can determine the entropy over the distribution of letters in the sample text we met before as, 
+
+![entropy-english-alphabet](images/entropy-english-alphabet.png)
+
+This is 4.1 bits (as the $\log$ is taken with base 2). This represents the average number of bits required to transmit each letter of this text to a hypothetical receiver. Note that we used the information carried by each "outcome" (the letter) that our source produced. If the source was binary, we can plot the entropy of such source over the probability p that the outcome is a 1 as shown below,
+
+![entropy-binary](images/entropy-binary.png)
+
+The plot simply was produced by taking the definition of entropy and applying to the binary case,
+
+$H(p) = - [p \ln p - (1-p) \ln(1-p)]$
+
+As you can see the maximum entropy is when the outcome is most unpredictable i.e. when a 1 can show up with uniform probability (in this case equal probability to a 0). 
+
+#### Relative entropy or KL divergence
+
+In the [ML problem statement](../ml-math/ml-problem-statement), it is evident that the job of the learning algorithm is to come up with a final hypothesis that is close to the *unknown* target function. In other occasions, we need to approximate a distribution by sampling from another easier to model distribution. As in ML we work with probabilities, we need to have a metric that compares two probability distributions $\{P(x),Q(x)\}$ in terms of their "distance" from each other (the quotes will be explained shortly). This is given by the quantity known as *relative entropy* or *KL divergence*. 
+
+$KL(P||Q)= \mathbb{E}[\ln P(x) - \ln Q(x)]$
+
+If the two distributions are identical, $KL=0$ - in general however $KL(P||Q) \ge 0$. One key element to understand is that $KL$ is not a true distance metric as its assymetric. Ensure that you understand fully the following figure and caption. 
+
+![KL-asymmetry](images/KL-asymmetry.png)
+
+Very close to the relative entropy is probably one of the most used information theoretic concepts in ML: **the cross-entropy**. 
+
+### Background for logistic regression
+
 If $p$ is a probability, then the ratio $\frac{p}{1-p}$ is the corresponding *odds*.  For example, in the binary classification case, the log odds is given by 
 
 $$ logit(\sigma) = \alpha = ln \frac{\sigma}{1-\sigma} = ln \frac{p(\mathcal{C}_1|\mathbf{x})}{p(\mathcal{C}_2|\mathbf{x})}$$
 
-The logistic function of any number $\alpha$ is given by the inverse logit:
+What is used in ML though is the logistic function of any number $\alpha$ that is given by the inverse logit:
 
 $${logistic}(\alpha) = \sigma(\alpha) = {logit}^{-1}(\alpha) =  \frac{1}{1 + exp(-\alpha)} = \frac{exp(\alpha)}{ exp(\alpha) + 1}$$
 

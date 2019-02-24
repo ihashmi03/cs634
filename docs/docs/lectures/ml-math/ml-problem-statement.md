@@ -28,7 +28,7 @@ The learning algorithm observes the training set which is drawn randomly and ind
 ## Regularization or Shrinkage
 Now that we have introduced somewhat more formally the learning problem and its notation lets us study a simple but instructive regression problem from Chapter 1 of Bishop's book that is known in the statistics literature as *shrinkage*. Note that in many figures below the label is denoted as $t$ rather than $y$ as used in the equations below.
 
-Suppose that we are given the training set  $\mathbf{x} = \{x_1,...,x_m\}$ together with their labels, the vectors $\mathbf{y}$. We need to construct a model such that a *suitably chosen* loss function is minimized for a **different** set of input data, the so-called test set. The ability to correctly *predict* when observing the test set, is called **generalization**.
+Suppose that we are given the training set  $\mathbf{x} = \{x_1,...,x_m\}$ together with their labels, the vectors $\mathbf{y}$. We need to construct a model such that a *suitably chosen* loss function is minimized for a **different** set of input data, the so-called test set. The ability to correctly *predict* when observing the test set, is called **generalization**. 
 
 ![Training dataset and Target Unknown Function](images/Figure1.2.png)
 *Training Dataset (m=10) for the Regression Model. The green curve is the uknown target function.*
@@ -39,7 +39,7 @@ Let us now pick the hypothesis set that correspond to polynomials of the followi
 
 $$g(\mathbf{w},x) = w_0 + w_1x + w_2 x^2 + ... + w_M x^M$$
 
-Our job is to find $\mathbf{w}$ such that the polynomial above fits the data we are given - as we will see there are multiple hypothesis that can satisfy this requirement. To gauge our investigation, we need to define a metric, an error or loss function in fact, that is also a common metric in regression problems of this nature. This is the Mean Squared Error function. 
+Our job is to find $\mathbf{w}$ such that the polynomial above fits the data we are given - as we will see there are multiple hypothesis that can satisfy this requirement. To gauge our investigation, we need to define a metric, an error or loss function in fact, that is also a common metric in regression problems of this nature. This is the Mean Squared Error (MSE) function. 
 
 $$L(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^m \{g(\mathbf{w},x_i)-t_i)\}^2$$
 
@@ -61,7 +61,7 @@ But this is not what you want to do. Because when met with test data, the model 
 
 To avoid overfitting we have multiple strategies. One straightforward one is evident by observing the wild oscillations of the $\mathbf{w}$ elements as the model complexity increases. We can penalize such oscillations by introducing the $l_2$ norm of $\mathbf{w}$ in our loss function.
 
-$$L(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^m \{g(\mathbf{w},x_i)-t_i)\}^2 + \frac{\lambda}{2} ||\mathbf{w}||^2$$
+$$L(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^m \{g(\mathbf{w},x_i)-y_i)\}^2 + \frac{\lambda}{2} ||\mathbf{w}||^2$$
 
 This type of solution is called **regularization** and because we effectively shrink the weight dynamic range it is also called in statistics shrinkage or ridge regression. We have introduced a new parameter $\lambda$ that regulates the relative importance of the penalty term as compared to the MSE. This parameter together with the polynomial order is what we call *hyperparameters* and we need to optimize them as both are needed for the determination of our final hypothesis $g$. 
 
@@ -69,4 +69,17 @@ The graph below show the results of each search iteration on the $\lambda$ hyper
 
 ![Loss Function](images/Figure1.8.png)
 
+
+Lets reflect on the MSE and how model complexity gives raise to various generalization errors. 
+
+$$MSE = \mathbb{E}[\hat{y}_i - y_i)^2] = \mathrm{Bias}(\hat{y}_i)^2 + \mathrm{Var}(\hat{y}_i)$$
+
+which means that the [MSE captures both bias and variance](https://en.wikipedia.org/wiki/Mean_squared_error) of the estimated target variables and as shown in the plots above, increasing model capacity can really increase the variance of $\hat{y}$. We have seen that as the $\mathbf{w}$ is trying to exactly fit, or memorize, the data, it minimizes the bias (in fact for model complexity M=9 the bias is 0) but it also exhibits significant variability that is itself translated to $\hat{y}$. Although the definition of model *capacity* is far more rigorous, we will broadly associate complexity with capacity and borrow the figure below from Ian Goodfellow's book to demosntrate the tradeoff between bias and variance. What we have done with regularization is to find the $\lambda$ that minimized generalization error aka. find the optimal model capacity. 
+
+![generalization-error-vs-capacity](images/generalization-capacity.png)
+*As capacity increases (x-axis), bias (dotted) tends to decrease and variance(dashed) tends to increase, yielding another U-shaped curve for generalization error (bold curve). If we vary capacity along one axis, there is an optimal capacity, with underﬁtting when the capacity is below this optimum and overﬁtting when it is above.*
+
+The MSE as a criterion not only reveals the bias and variance tradeoff above but has 
+
 Now that we have concluded the treatment of some elementary concepts, let us use them in a [data mining problem](../ml-frameworks/zillow-app).
+
