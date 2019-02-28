@@ -22,10 +22,11 @@ class IndexRoute extends React.Component {
             </h1>
             <p>The process of learning is a multi-step endeavor that involves, data analysis, visualization, learning algorithms, model analysis  - all done in a well orchestrated framework to deliver automated machine intelligence to humans and systems that require it. 
 
-            In this course we will learn from structured and unstructured data using both classical machine learning, in supervised and unsupervised settings, as well as deeper architectures (convolutional neural networks) in supervised settings only. The schedule below highlights the journey. </p>
+            In this course we will learn from structured and unstructured data using both classical machine learning, in supervised and unsupervised settings, as well as deeper architectures (neural networks) in supervised settings only. The schedule below highlights the journey. </p>
             <h2>Books</h2>
-            <li> <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"> Pattern Recognition & Machine Learning, by Bishop, 2006 </a></li>
-            <li><a href="https://github.com/janishar/mit-deep-learning-book-pdf">Deep Learning, by Ian Goodfellow, et.al., 2016. </a></li>
+            <li><a href="https://www-users.cs.umn.edu/~kumar001/dmbook/index.php">Introduction to Data Mining </a> </li> 
+            <li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"> Pattern Recognition & Machine Learning, by Bishop, 2006 </a></li> (optional, this web site notes only)
+            <li><a href="https://github.com/janishar/mit-deep-learning-book-pdf">Deep Learning, by Ian Goodfellow, et.al., 2016. </a></li> (optional, this web site notes only)
             <li><a href="https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291/ref=sr_1_3?ie=UTF8&qid=1547836944&sr=8-3&keywords=hands+on+machine+learning+with+scikit-learn+and+tensorflow">Hands-On Machine Learning with Scikit-Learn and TensorFlow, by Aurélien Géron, 2017</a></li>
   
             <h2>Class Schedule</h2>
@@ -62,14 +63,17 @@ class IndexRoute extends React.Component {
               <strong>Week 10: (3/28/2019) </strong>  This week we have a Guest Lecturer - he will go over some key Data Mining applications. 
               </li>
               <li>
-              <strong>Week 11: (4/4/2019) </strong>  We connect back to the perceptron algorithm and we start the exploration into the deep learning space by connecting multiple perceptrons together in layers. We explain how MLPs learn via SGD and how backpropagation in MLPs dramatically improves the estimation of the required gradients. 
+              <strong>Week 11: (4/4/2019) </strong>  Anomaly detection is one of the fundamental use cases in machine learning. We will go through the tools and approaches to reveal anomalies under a wide range of conditions for time-series data. 
               </li>
               <li>
-              <strong>Week 12: (4/11/2019) </strong>  We continue on backpropation by highlighting how we need to control  gradient flow to avoid vanishing gradients or gradient explosion in Deep Neural Networks. We go over a DNN example highlighting the training difficulties / issues. 
+              <strong>Week 12: (4/11/2019) </strong>  We connect back to the perceptron algorithm and we start the exploration into the deep learning space by connecting multiple perceptrons together in layers. We explain how MLPs learn via SGD and how backpropagation in MLPs dramatically improves the estimation of the required gradients. 
               </li>
               <li>
+              <strong>Week 13: (4/18/2019) </strong>  We continue on backpropation by highlighting how we need to control  gradient flow to avoid vanishing gradients or gradient explosion in Deep Neural Networks. We go over a DNN example highlighting the training difficulties / issues. 
+              </li>
+              {/* <li>
               <strong>Week 13: (4/18/2019) </strong>  CNNs are almost synonymous with deep learning. This architecture although known for some time, it is finding application in a diverse set of use cases involving unstructured data such as computer vision. We review the principles of convolution and pooling and understand what they offer relative to fully connected layers. At the end we go over a classic object detection example.  
-              </li>
+              </li> */}
               <li>
               <strong>Week 14: (4/25/2019) </strong>  We conclude the course with going over a complete end to end tensorflow pipeline use case, spending some time on hyperparameter optimization. 
               </li>

@@ -4,7 +4,7 @@ title: Linear Classification
 
 ![radar-tower](images/radar-tower.png)
 
-This section captures the main principles of Bishop's Section 1.5. We used also a key table from Wikipedia and associated text that define its entries.
+This section captures the main principles of Bishop's Section 1.5. We used also a key table from Wikipedia and associated text that define its entries. 
 
 ## Classification Principle
 
@@ -27,7 +27,7 @@ There are three broad classes of methods for determining the parameters $\mathbf
 
 * In binary classification, the target variable (label) $y$ belongs to either of the two classes $\{\mathcal{C}_1, \mathcal{C}_2\}$ - for multi-class it is taking a value out of a finite set of classes. Contrast this to regression where $y$ is taking any value out of a infinite possible set of values ($y \in \mathbb{R}$). For example,  we can choose convenient labels $y=0$ for class $\mathcal{C}_1$, and $y=1$ for class $\mathcal{C}_2$. 
 
-* The Bayesian setting is now very handy, $$ p(\mathcal{C}_k|\mathbf{x}) = \frac{p(\mathbf{x}|\mathcal{C}_k)p(\mathcal{C}_k)}{p(\mathbf{x})}$$
+* The Bayesian setting is now very handy, $ p(\mathcal{C}_k|\mathbf{x}) = \frac{p(\mathbf{x}|\mathcal{C}_k)p(\mathcal{C}_k)}{p(\mathbf{x})}$
 where $p(\mathcal{C}_k)$ is the prior probability for the corresponding class. The equation above is similar to what we have seen in regression, and can be used to update the posterior probability  $p(\mathcal{C}_k|\mathbf{x})$ given the likelihood function, prior and evidence. As an example, we look at the CT-scan of a patient and obtain the posterior probability based on the formula above and can now diagnose the patient as a cancer free if $p(\mathcal{C}_0|\mathbf{x}) > p(\mathcal{C}_1|\mathbf{x})$ where $\mathcal{C}_0$ is the cancer free class. 
 
 ![Bishop-Figure-1.24](images/Figure1.24.png)
@@ -49,3 +49,4 @@ Let us define an experiment from P positive instances and N negative instances f
 *Confusion Matrix ([Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteristic))*
 
 For an instructional [example](https://www.kaggle.com/uciml/iris) of determining the confusion matrix of classification models using scikit-learn see the Iris case study.
+

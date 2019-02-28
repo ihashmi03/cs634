@@ -55,15 +55,15 @@
           link: /docs/lectures/classification/iris
         - title: MNIST Case Study
           link: /docs/lectures/classification/mnist
-    - title: Week 6. Kernel Methods and SVM
+    - title: Week 6. SVM
       ui: steps
       items: 
         - title: Kernel Methods
-          link: /docs/lectures/kernels
+          link: /docs/lectures/svm/kernels
         - title: Support Vector Machines
-          link: /docs/lectures/svm
-        - title: SVM case study
-          link: /docs/lectures/svm-case-study
+          link: /docs/lectures/svm/svm
+        - title: Face recognition case study
+          link: /docs/lectures/svm/face-recognition
     - title: Week 7. Clustering
       ui: steps
       items: 
@@ -84,7 +84,8 @@
           link: /docs/lectures/random-forest-case-study
     - title: Week 9. Spring Recess 
     - title: Week 10. Guest Lecture (Prof. Jason Wang)
-    - title: Week 11. Multi-Layer Perceptrons
+    - title: Week 11. Anomaly Detection
+    - title: Week 12. Multi-Layer Perceptrons
       ui: steps
       items: 
         - title: Architecture
@@ -93,7 +94,7 @@
           link: /docs/lectures/backpropagation
         - title: MPL Case Study  
           link: /docs/lectures/mlp-case-study
-    - title: Week 12. Training Deep Networks
+    - title: Week 13. Training Deep Networks
       ui: steps
       items: 
         - title: Optimization Algorithms
@@ -102,15 +103,15 @@
           link: /docs/lectures/backpropagation
         - title: Deep Neural Network Case Study  
           link: /docs/lectures/dnn-case-study
-    - title: Week 13. Convolutional Neural Networks
-      ui: steps
-      items: 
-        - title: Convolution & Pooling
-          link: /docs/lectures/convolution
-        - title: Simple CNN Example
-          link: /docs/lectures/simple-cnn
-        - title: Object Derection Case Study
-          link: /docs/lectures/object-detection
+    # - title: Week 14. Convolutional Neural Networks
+    #   ui: steps
+    #   items: 
+    #     - title: Convolution & Pooling
+    #       link: /docs/lectures/convolution
+    #     - title: Simple CNN Example
+    #       link: /docs/lectures/simple-cnn
+    #     - title: Object Derection Case Study
+    #       link: /docs/lectures/object-detection
     - title: Week 14. E2E Case Study
       ui: steps
       items: 
@@ -118,7 +119,7 @@
           link: /docs/lectures/hyperparameter-optimization
         - title: Tensorflow Case Study 
           link: /docs/lectures/tensorflow-e2e
-    - title: Week 15. Lessons Learned 
+    - title: Week 15. Lessons Learned and Review
 - title: Guides
   items:
       - title: Preparing your programming environment

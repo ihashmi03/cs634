@@ -36,7 +36,7 @@ Let $t$ denote the iteration index and $r$ the **learning rate**.
 2. For each example in our training set, perform the following steps over the input $\mathbf{x}_j$ and desired output $y_j$:
 
 $$
-g_j(t) = f[\mathbf{w}(t)^T\mathbf{x}_j] = f[w_0(t)x_{j,0} + w_1(t)x_{j,1} + w_2(t)x_{j,2} + \dotsb + w_n(t)x_{j,n}]
+\hat{y}_j(t) = g[\mathbf{w}(t)^T\mathbf{x}_j] = g[w_0(t)x_{j,0} + w_1(t)x_{j,1} + w_2(t)x_{j,2} + \dotsb + w_n(t)x_{j,n}]
 $$
 3. Update the weights:
 $$w_i(t+1) = w_i(t) + r\cdot(y_j - \hat{y}_j(t)) x_{j,i}$$, for all features $0 \leq i \leq n$.
@@ -44,10 +44,17 @@ $$w_i(t+1) = w_i(t) + r\cdot(y_j - \hat{y}_j(t)) x_{j,i}$$, for all features $0 
 The updated weights are immediately applied to a pair in the training set, and subsequently updated, rather than waiting until all pairs in the training set have undergone these steps.
 
 ![perceptron-convergence-1](images/Figure4.7a.png)
+*Initial parameter vector $\mathbf w$ shown as a black arrow together with the corresponding decision boundary (black line), in which the arrow points towards the decision region which classified as belonging to the red class.  The data point circled in green is misclassified and so its feature vector is added to the current weight vector, giving the new decision boundary shown in the plot below.*  
 ![perceptron-convergence-2](images/Figure4.7b.png)
 ![perceptron-convergence-3](images/Figure4.7c.png)
+*The next misclassified point to be considered, indicated  by  the  green  circle,  and  its  feature  vector  is  again  added  to  the  weight  vector  giving  the  decision boundary shown in the plot below for which all data points are correctly classified.*
 ![perceptron-convergence-4](images/Figure4.7d.png)
 
-> NOTE: For offline learning, the second step may be repeated until the iteration error $\frac{1}{s} \sum_{j=1}^s |y_j - \hat{y}_j(t)| $ is less than a user-specified error threshold $\gamma $, or a predetermined number of iterations have been completed, where ''s'' is the size of the sample set.
+> NOTE: For offline learning, the second step may be repeated until the iteration error $\frac{1}{s} \sum_{j=1}^s |y_j - \hat{y}_j(t)| $ is less than a user-specified error threshold $\gamma $, or a predetermined number of iterations have been completed, where ''s'' is the size of the training set.
 
-The perceptron is a linear classifier, therefore it will never get to the state with all the input vectors classified correctly if the training set D is not linearly separable, i.e. if the positive examples cannot be separated from the negative examples by a hyperplane. In this case, no "approximate" solution will be gradually approached under the standard learning algorithm, but instead learning will fail completely. 
+The perceptron is a linear classifier, therefore it will never get to the state with all the input vectors classified correctly if the training set D is not linearly separable, i.e. if the positive examples cannot be separated from the negative examples by a hyperplane. In this case, no "approximate" solution will be gradually approached under the standard learning algorithm, but instead learning will fail completely. Even in the case of linearly separable datasets, the algorithm may exhibit significant variance while it is executing as previously correctly classified examples may "fall" into the wrong decision region by an update that considers a currently misclassified example. 
+
+Further, the perceptron solution will depend on the initial choices of the parameters as well as the order of the training dataset presented. [Support Vector Machines](../svm/svm) avoid such pitfalls which can motivate the question why we insisted on learning the perceptron algorithm: **both architecturally and the functionally the linear combination of features followed by a non-linearity is the fundamental building block of far more complicated neural networks.** 
+
+### Perceptron performance
+For a live demo of perceptron performance see the single neuron example for separable datasets in [Tensorflow Playground](../../resources/playground)

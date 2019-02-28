@@ -6,7 +6,7 @@ title: Probability and Information Theory Basics
  From Ian Goodfellow's book:
 <iframe src="https://www.deeplearningbook.org/contents/prob.html" width="800" height="1200"></iframe>
 
-We will go through the main points during the lecture and treat also [MacKay's book (Chapter 2)](https://www.inference.org.uk/itprnn/book.pdf) that is also instructive and a much better in introducing probability concepts.   
+We will go through the main points during the lecture and treat also [MacKay's book (Chapter 2)](https://www.inference.org.uk/itprnn/book.pdf) that is also instructive and a much better in introducing probability concepts. If you are a visual learner, [the visual information theory](http://colah.github.io/posts/2015-09-Visual-Information/#fn4) blog post is also a good starting point. 
 
 ## Key Concepts to understand
 
@@ -85,18 +85,18 @@ Such geometric interpretations will be very useful when we study dimensionality 
 
 This example is instructive beyond the habit of having coin flip examples in every textbook in probability theory and statistics. It is useful to understand the conjugate prior distribution being discussed in Bishop's section 2.1.1 and Figure 3 that the code above replicates.  Armed with this understanding, we can now treat the Bayesian update for linear regression as described in the [linear regression section](/docs/lectures/regression/linear-regression).
 
-### Information Theoretic Definitions
+### Information-theoretic definitions
 
 #### Entropy
 An outcome $x_t$ carries information that is a function of the probability of this outcome $P(x_t)$ by, 
 
-$I(x_t) = - \ln P(x_t)$
+$I(x_t) = \ln \frac{1}{P(x_t)} = - \ln P(x_t)$
 
 This can be intuitively understood when you compare two outcomes. For example, consider someone is producing the result of the vehicular traffic outside of Holland tunnel on Monday morning. The information that the results is "low" carries much more information when the result is "high" since most people expect that there will be horrendous traffic outside of Holland tunnel on Monday mornings. When we want to represent the amount of uncertainty over a distribution (i.e. the traffic in Holland tunnel over all times) we can take the expectation over all possible outcomes i.e.
 
 $H(P) =  - \mathbb{E} \ln P(x)$
 
-and we call this quantity the **entropy** of the probability distribution $P(x)$. When $x$ is continuous the entropy is known as **differential entropy**. Continuing the alphabetical example, we can determine the entropy over the distribution of letters in the sample text we met before as, 
+and we call this quantity the **entropy** of the probability distribution $P(x)$. When $x$ is continuous the entropy is known as **differential entropy**. Continuing the alphabetical example, we can determine the entropy over the distribution of letters in the sample text we met before as,
 
 ![entropy-english-alphabet](images/entropy-english-alphabet.png)
 
@@ -110,7 +110,7 @@ $H(p) = - [p \ln p - (1-p) \ln(1-p)]$
 
 As you can see the maximum entropy is when the outcome is most unpredictable i.e. when a 1 can show up with uniform probability (in this case equal probability to a 0). 
 
-#### Relative entropy or KL divergence
+#### Relative entropy or KL divergence (optional)
 
 In the [ML problem statement](../ml-math/ml-problem-statement), it is evident that the job of the learning algorithm is to come up with a final hypothesis that is close to the *unknown* target function. In other occasions, we need to approximate a distribution by sampling from another easier to model distribution. As in ML we work with probabilities, we need to have a metric that compares two probability distributions $\{P(x),Q(x)\}$ in terms of their "distance" from each other (the quotes will be explained shortly). This is given by the quantity known as *relative entropy* or *KL divergence*. 
 
@@ -120,17 +120,20 @@ If the two distributions are identical, $KL=0$ - in general however $KL(P||Q) \g
 
 ![KL-asymmetry](images/KL-asymmetry.png)
 
-Very close to the relative entropy is probably one of the most used information theoretic concepts in ML: **the cross-entropy**. 
+Very close to the relative entropy is probably one of the most used information theoretic concepts in ML: **the cross-entropy**. We will motivate cross entropy via a diagram shown below,
+
+![entropy-relations](images/entropy-relations.png)
+
 
 ### Background for logistic regression
 
-If $p$ is a probability, then the ratio $\frac{p}{1-p}$ is the corresponding *odds*.  For example, in the binary classification case, the log odds is given by 
+If $\sigma$ is a probability of an event, then the ratio $\frac{\sigma}{1-\sigma}$ is the corresponding *odds*, the ratio of the event  occurring divided by not occurring. For example, if a race horse runs 100 races and wins 25 times and loses the other 75 times, the probability of winning is 25/100 = 0.25 or 25%, but the odds of the horse winning are 25/75 = 0.333 or 1 win to 3 loses. In the binary classification case, the log odds is given by 
 
-$$ logit(\sigma) = \alpha = ln \frac{\sigma}{1-\sigma} = ln \frac{p(\mathcal{C}_1|\mathbf{x})}{p(\mathcal{C}_2|\mathbf{x})}$$
+$$ \mathtt{logit}(\sigma) = \alpha = \ln \frac{\sigma}{1-\sigma} = \ln \frac{p(\mathcal{C}_1|\mathbf{x})}{p(\mathcal{C}_2|\mathbf{x})}$$
 
 What is used in ML though is the logistic function of any number $\alpha$ that is given by the inverse logit:
 
-$${logistic}(\alpha) = \sigma(\alpha) = {logit}^{-1}(\alpha) =  \frac{1}{1 + exp(-\alpha)} = \frac{exp(\alpha)}{ exp(\alpha) + 1}$$
+$$\mathtt{logistic}(\alpha) = \sigma(\alpha) = \mathtt{logit}^{-1}(\alpha) =  \frac{1}{1 + \exp(-\alpha)} = \frac{\exp(\alpha)}{ \exp(\alpha) + 1}$$
 
 and is plotted below. It maps its argument to the "probability" space [0,1]. 
 

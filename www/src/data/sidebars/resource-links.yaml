@@ -1,14 +1,4 @@
-- title: Relevant Course Sites 
+- title: Relevant Sites 
   items:
-    - title: Stanford
-      link: /docs/resources/stanford
-    - title: University of Washington
-      link: 
-- title: Relevant Programming Sites
-  items:
-    - title: Video 1
-      link: 
-    - title: Video 2
-      link: 
-    - title: Video 3
-      link: 
+    - title: Tensorflow Playground
+      link: /docs/resources/playground
