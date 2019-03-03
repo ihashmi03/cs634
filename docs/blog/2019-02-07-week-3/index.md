@@ -23,7 +23,7 @@ The math review spanned many topics.
 
 On probability theory you need to understand: 
 
-* The conditional probability and the Bayes theorem. Given a problem statement (e.g. Cancer diagnosis) you need to be able to, using the Bayes rule, to derive conditional probabilities. The Bayes rule is something you need to be able to memorize. The way I had is to write the posterior probability $p(a|b)$ equal to the flipped conditional $p(b|a)$ multiplied by a fraction. Imagine that a|b is a fraction a/b and therefore it is $p(a)/p(b)$ - the whole thing then becomes $p(a|b)=p(b|a) p(a)/p(b)$
+* The conditional probability and the Bayes theorem. Given a problem statement (e.g. Cancer diagnosis) you need to be able to, using the Bayes rule, to derive conditional probabilities. The Bayes rule is something you need to be able to memorize. The way I had is to write the posterior probability p(a|b) equal to the flipped conditional p(b|a) multiplied by a fraction. Imagine that a|b is a fraction a/b and therefore it is p(a)/p(b) - the whole thing then becomes p(a|b)=p(b|a) p(a)/p(b).
 * The bivariate Gaussian and binomial distributions without trying to memorize the formulas - the level of understanding requires for Gaussian is to be able to tell the difference between positive and negative correlated data. 
 
 On linear algebra you will need:  
