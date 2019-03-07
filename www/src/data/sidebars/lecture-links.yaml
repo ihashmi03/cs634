@@ -47,8 +47,6 @@
           link: /docs/lectures/classification/linear-classification
         - title: The Perceptron
           link: /docs/lectures/classification/perceptron 
-        - title: Perceptron Performance
-          link: /docs/lectures/classification/perceptron-performance
         - title: Logistic Regression
           link: /docs/lectures/classification/logistic-regression
         - title: Iris Case study
@@ -58,7 +56,7 @@
     - title: Week 6. SVM
       ui: steps
       items: 
-        - title: Kernel Methods
+        - title: Kernels and Kernel Trick
           link: /docs/lectures/svm/kernels
         - title: Support Vector Machines
           link: /docs/lectures/svm/svm
