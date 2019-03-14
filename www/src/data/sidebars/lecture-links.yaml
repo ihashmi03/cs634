@@ -62,15 +62,15 @@
           link: /docs/lectures/svm/svm
         - title: Face recognition case study
           link: /docs/lectures/svm/face-recognition
-    - title: Week 7. Clustering
+    - title: Week 7. Non-parametric Methods
       ui: steps
       items: 
-        - title: K-means
-          link: /docs/lectures/k-means
-        - title: KNN
-          link: /docs/lectures/knn
+        - title: K-means Clustering
+          link: /docs/lectures/clustering/kmeans
+        - title: kNN Classification
+          link: /docs/lectures/clustering/knn
         - title: Decision Trees 
-          link: /docs/lectures/decision-trees
+          link: /docs/lectures/clustering/decision-trees
         - title: Clustering / Decision Tree case study
           link: /docs/lectures/clustering-case-study
     - title: Week 8. Midterm Exam / Random Forests 

@@ -1,4 +1,6 @@
-- title: Relevant Sites 
+- title: Resources 
   items:
     - title: Tensorflow Playground
       link: /docs/resources/playground
+    - title: Projective Geometry
+      link: /docs/resources/geometry/projections
