@@ -4,7 +4,7 @@ title: Decision Tree
 
 Continuing our path into non-parametric methods, the decision tree is one of the most popular ML algorithms. Its popularity stems also from yet another attribute that is becoming very important in the application of ML/AI in mission critical industries such as health: its ability to offer interpretable results and be visualized easily. 
 
-> Note: The material is covered in part in the Chapter 3 of [this book](https://www-users.cs.umn.edu/~kumar001/dmbook/ch3_classification.pdf).  Many of the notes below are borrowed from the free Kindle book "ML with Random Forests and Decision Trees" by Scott Hartshorn.
+> Note: The material below is due to (a) "ML with Random Forests and Decision Trees" by Scott Hartshorn, (b) Decision Forests for Classification, Regression, Density Estimation, Manifold Learning and Semi-Supervised Learning by Criminisi et.a.l.
 
 ## Introduction
 A Decision Tree is simply a step by step process to go through to decide a category something belongs to - in the case of classification. They are non-parametric models because they dont use a predetermined set of parameters as in parametric models - rather the tree fits the data very closely and often overfits using as many parameters are required **during training**. 
