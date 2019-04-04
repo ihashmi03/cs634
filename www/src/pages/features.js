@@ -132,7 +132,7 @@ const FeaturesHeader = () => (
             (automated feature selection) in their code they need to submit in their write up an explanation as to how the AutoML scheme works. 
             AutoML submissions will be rewarded extra credit but they are not a prerequisite for a good score. 
           </li>
-          <li>You need to submit  one (1) final project of your choice. Final projects will be posted during Spring break and they are due <b> May 2nd. </b></li>  
+          <li>You need to submit  the final project published after spring break. Final project is due <b> May 2nd. </b></li>  
           <li>See the <Link to="/docs/environment/setup">setup</Link> for setting up your development environment.</li>
         </ul>
     </FuturaParagraph>

@@ -69,20 +69,22 @@
           link: /docs/lectures/clustering/kmeans
         - title: kNN Classification
           link: /docs/lectures/clustering/knn
-        - title: Decision Trees 
-          link: /docs/lectures/clustering/decision-trees
-        - title: Clustering / Decision Tree case study
-          link: /docs/lectures/clustering-case-study
-    - title: Week 8. Midterm Exam / Random Forests 
-      ui: steps
-      items: 
-        - title: Random Forests
-          link: /docs/lectures/random-forests
-        - title: Random Forests Case Study
-          link: /docs/lectures/random-forest-case-study
+    - title: Week 8. Midterm Exam 
     - title: Week 9. Spring Recess 
     - title: Week 10. Guest Lecture (Prof. Jason Wang)
-    - title: Week 11. Anomaly Detection
+      ui: steps
+      items: 
+        - title: Association Rules
+          link: /docs/lectures/rules/rules
+    - title: Week 11. Decision Trees & Random Forests
+      ui: steps
+      items: 
+        - title: Decision Trees 
+          link: /docs/lectures/trees/decision-trees
+        - title: Random Forests
+          link: /docs/lectures/trees/random-forests
+        - title: Random Forests Case Study
+          link: /docs/lectures/trees/random-forest-case-study
     - title: Week 12. Multi-Layer Perceptrons
       ui: steps
       items: 
