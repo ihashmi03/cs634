@@ -25,7 +25,7 @@ $p(c|\mathbf x) = \frac{1}{T} \sum_{t=1}^T p_t(c|\mathbf x) $
 
 
 ## Impact of random forest parameters
-
 Given a training dataset with two classes (a), different training trees produce different partitions and thus different leaf predictors. The colour of tree nodes and edges indicates the class probability of training points  going  through  them (b)  In  testing,  increasing  the  forest  size $T$ produces smoother class posteriors. 
 
 ![effect-num-trees](images/effect-num-trees.png)
+

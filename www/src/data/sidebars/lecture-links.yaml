@@ -85,40 +85,37 @@
           link: /docs/lectures/trees/random-forests
         - title: Random Forests Case Study
           link: /docs/lectures/trees/random-forest-case-study
-    - title: Week 12. Multi-Layer Perceptrons
+    - title: Week 12. Deep Neural Networks
       ui: steps
       items: 
+        - title: Introduction
+          link: /docs/lectures/dnn/introduction
         - title: Architecture
-          link: /docs/lectures/architecture
-        - title: Backpropagation-I
-          link: /docs/lectures/backpropagation
-        - title: MPL Case Study  
-          link: /docs/lectures/mlp-case-study
+          link: /docs/lectures/dnn/architecture
+        - title: Backpropagation
+          link: /docs/lectures/dnn/backprop
+        - title: Introduction to Tensorflow
+          link: /docs/lectures/dnn/tensorflow
     - title: Week 13. Training Deep Networks
       ui: steps
       items: 
-        - title: Optimization Algorithms
-          link: /docs/lectures/architecture
         - title: Backpropagation-II
-          link: /docs/lectures/backpropagation
-        - title: Deep Neural Network Case Study  
-          link: /docs/lectures/dnn-case-study
-    # - title: Week 14. Convolutional Neural Networks
-    #   ui: steps
-    #   items: 
-    #     - title: Convolution & Pooling
-    #       link: /docs/lectures/convolution
-    #     - title: Simple CNN Example
-    #       link: /docs/lectures/simple-cnn
-    #     - title: Object Derection Case Study
-    #       link: /docs/lectures/object-detection
-    - title: Week 14. E2E Case Study
+          link: /docs/lectures/dnn-training/backpropagation
+        - title: Training 
+          link: /docs/lectures/dnn-training/training
+        - title: Optimization Algorithms
+          link: /docs/lectures/dnn-training/dnn-optimization   
+        - title: Tensorflow MNIST Case Study 
+          link: /docs/lectures/dnn-training/dnn-case-study
+    - title: Week 14. Convolutional Neural Networks
       ui: steps
       items: 
-        - title: Hyperparameter Optimization
-          link: /docs/lectures/hyperparameter-optimization
-        - title: Tensorflow Case Study 
-          link: /docs/lectures/tensorflow-e2e
+        - title: Convolution & Pooling
+          link: /docs/lectures/convolution
+        - title: Simple CNN Example
+          link: /docs/lectures/simple-cnn
+        - title: Tensorflow Object Detection Case Study
+          link: /docs/lectures/object-detection
     - title: Week 15. Lessons Learned and Review
 - title: Guides
   items:
